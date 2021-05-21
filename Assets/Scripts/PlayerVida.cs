@@ -8,13 +8,20 @@ public class PlayerVida : MonoBehaviour
 	public int maxHealth = 10;
 	public int currentHealth;
 
+    public int maxEnergy = 10;
+    public int currentEnergy;
+
     public BarraVida healthBar;
+    public BarraEnergia energyBar;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        currentEnergy = maxEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
     }
 
     // Update is called once per frame
@@ -24,11 +31,22 @@ public class PlayerVida : MonoBehaviour
         {
         	TakeDamage(1);
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            WasteEnergy(1);
+        }
     }
 
     void TakeDamage(int damage)
     {
     	currentHealth -= damage;
     	healthBar.SetHealth(currentHealth);
+    }
+
+    void WasteEnergy(int waste)
+    {
+        currentEnergy -= waste;
+        energyBar.SetEnergy(currentEnergy);
     }
 }
