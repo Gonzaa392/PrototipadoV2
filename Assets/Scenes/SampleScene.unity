@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 55159647}
   - component: {fileID: 55159648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemy_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270769634}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 277349275}
   - component: {fileID: 277349276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enemy_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,8 @@ GameObject:
   - component: {fileID: 317079513}
   - component: {fileID: 317079512}
   - component: {fileID: 317079515}
-  m_Layer: 0
+  - component: {fileID: 317079516}
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +427,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &317079514
 Transform:
   m_ObjectHideFlags: 0
@@ -434,7 +435,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317079511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.76, y: -1.648, z: 0}
   m_LocalScale: {x: 1.2941, y: 1.2941, z: 1.2941}
   m_Children:
@@ -445,7 +446,7 @@ Transform:
   - {fileID: 1333918808}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &317079515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -498,6 +499,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &317079516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317079511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cce0216754ee12429af9543e40b692b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayCast: {fileID: 1333918808}
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  rayCastLength: 10
+  attackDistance: 3
+  moveSpeed: 2
+  timer: 0
 --- !u!1 &351121585
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,9 +533,9 @@ GameObject:
   - component: {fileID: 351121586}
   - component: {fileID: 351121588}
   - component: {fileID: 351121591}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -678,7 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381846190}
   - component: {fileID: 381846191}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -709,7 +730,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.04877135, y: 0.10645774}
@@ -1389,7 +1410,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.040404, y: 1}
+    m_SensorSize: {x: 2.484472, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1422,7 +1443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333918808}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: raycast
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -1823,7 +1844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957666382}
   - component: {fileID: 1957666383}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: triggerArea
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1854,7 +1875,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
