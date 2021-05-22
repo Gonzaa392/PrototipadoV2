@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerVida : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class PlayerVida : MonoBehaviour
 
         currentEnergy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
+    }
+
+    void SinVida(bool vida)
+    {
+    	if(maxHealth < 1)
+    	{
+    		SceneManager.LoadScene("Nivel 1 Prueba");
+    	}
+
     }
 
     // Update is called once per frame
